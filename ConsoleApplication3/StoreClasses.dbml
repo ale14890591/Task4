@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Class="StoreClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="" Member="Client">
+    <Type Name="Client">
+      <Column Name="IdClient" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+      <Association Name="Client_Order" Member="Order" ThisKey="IdClient" OtherKey="Client" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="" Member="Commodity">
+    <Type Name="Commodity">
+      <Column Name="IdCommodity" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" CanBeNull="false" />
+      <Association Name="Commodity_Order" Member="Order" ThisKey="IdCommodity" OtherKey="Commodity" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="" Member="Order">
+    <Type Name="Order">
+      <Column Name="IdOrder" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Client" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Commodity" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" CanBeNull="false" />
+      <Column Name="Manager" Type="System.Int32" CanBeNull="false" />
+      <Association Name="Client_Order" Member="Client1" ThisKey="Client" OtherKey="IdClient" Type="Client" IsForeignKey="true" />
+      <Association Name="Commodity_Order" Member="Commodity1" ThisKey="Commodity" OtherKey="IdCommodity" Type="Commodity" IsForeignKey="true" />
+      <Association Name="Manager_Order" Member="Manager1" ThisKey="Manager" OtherKey="IdManager" Type="Manager" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="Manager">
+    <Type Name="Manager">
+      <Column Name="IdManager" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+      <Association Name="Manager_Order" Member="Order" ThisKey="IdManager" OtherKey="Manager" Type="Order" />
+    </Type>
+  </Table>
+</Database>

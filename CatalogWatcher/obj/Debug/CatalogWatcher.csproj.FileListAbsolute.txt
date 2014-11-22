@@ -1,0 +1,8 @@
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\CatalogWatcher\bin\Debug\CatalogWatcher.exe.config
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\CatalogWatcher\bin\Debug\CatalogWatcher.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\CatalogWatcher\bin\Debug\CatalogWatcher.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\CatalogWatcher\obj\Debug\CatalogWatcher.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\CatalogWatcher\obj\Debug\CatalogWatcher.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\CatalogWatcher\obj\Debug\CatalogWatcher.csprojResolveAssemblyReference.cache
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\CatalogWatcher\bin\Debug\ConsoleApplication3.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\CatalogWatcher\bin\Debug\ConsoleApplication3.pdb
