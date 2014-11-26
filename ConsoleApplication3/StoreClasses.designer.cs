@@ -224,8 +224,6 @@ namespace ConsoleApplication3
 		
 		private string _Name;
 		
-		private int _Price;
-		
 		private EntitySet<Order> _Order;
 		
     #region Определения метода расширяемости
@@ -236,8 +234,6 @@ namespace ConsoleApplication3
     partial void OnIdCommodityChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
-    partial void OnPriceChanging(int value);
-    partial void OnPriceChanged();
     #endregion
 		
 		public Commodity()
@@ -282,26 +278,6 @@ namespace ConsoleApplication3
 					this._Name = value;
 					this.SendPropertyChanged("Name");
 					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price")]
-		public int Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this.OnPriceChanging(value);
-					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
 				}
 			}
 		}

@@ -10,7 +10,6 @@
     <Type Name="Commodity">
       <Column Name="IdCommodity" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" CanBeNull="false" />
-      <Column Name="Price" Type="System.Int32" CanBeNull="false" />
       <Association Name="Commodity_Order" Member="Order" ThisKey="IdCommodity" OtherKey="Commodity" Type="Order" />
     </Type>
   </Table>

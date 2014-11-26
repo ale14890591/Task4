@@ -11,11 +11,7 @@ namespace ConsoleApplication3
     {
         static void Main(string[] args)
         {
-            //StoreClassesDataContext db = new StoreClassesDataContext(@"Data Source=000-ПК\SQLEXPRESS; AttachDbFilename=D:\MyDatabase.mdf; Integrated Security=True");
-            //db.CreateDatabase();
-            //Client a = new Client() {IdClient = 1, Name = "a"};
-            //db.Client.InsertOnSubmit(a);
-            //db.SubmitChanges();
+            
         }
     }
 }

@@ -26,19 +26,19 @@ namespace ConsoleApplication3
 
         public bool ClientExists(string name)
         {
-            return db.Client.Contains(new Client() {Name = name}, new ClientComparer());
+            return db.Client.FirstOrDefault(x => x.Name == name) != null ? true : false;
         }
 
-        public void AddCommodity(string name, int price)
+        public void AddCommodity(string name)
         {
-            Commodity c = new Commodity() {Name = name, Price = price};
+            Commodity c = new Commodity() {Name = name};
             db.Commodity.InsertOnSubmit(c);
             db.SubmitChanges();
         }
 
-        public bool CommodityExists(string name, int price)
+        public bool CommodityExists(string name)
         {
-            return db.Commodity.Contains(new Commodity() { Name = name, Price = price});
+            return db.Commodity.FirstOrDefault(x => x.Name == name) != null ? true : false;
         }
 
         public void AddManager(string name)
@@ -50,14 +50,14 @@ namespace ConsoleApplication3
 
         public bool ManagerExists(string name)
         {
-            return db.Manager.Contains(new Manager() { Name = name });
+            return db.Manager.FirstOrDefault(x => x.Name == name) != null ? true : false;
         }
         
         public void AddOrder(DateTime date, string manager, string client, string commodity, int price)
         {
             Manager m = db.Manager.First(x => x.Name == manager);
             Client c = db.Client.First(x => x.Name == client);
-            Commodity cm = db.Commodity.First(x => x.Name == commodity && x.Price == price);
+            Commodity cm = db.Commodity.First(x => x.Name == commodity);
 
             Order order = new Order()
             {

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using ConsoleApplication3;
 
@@ -13,6 +14,7 @@ namespace CatalogWatcher
     {
         public string Catalog { get; set; }
         private FileSystemWatcher catalogWatcher;
+        private static object locker = new object();
 
         public void Initialization(string path)
         {
@@ -25,49 +27,75 @@ namespace CatalogWatcher
 
             catalogWatcher.Created += null;
 
-            IEnumerable<string> files = System.IO.Directory.GetFiles(Catalog, "*_????????.csv");
+            IEnumerable<object> files = System.IO.Directory.GetFiles(Catalog, "*_????????.csv");
 
-            foreach (string s in files)
+            foreach (object s in files)
             {
-                string[] contents = ReadFile(s);
-                string[] date = contents[0].Split('.');
-                //string date = Regex.Match(s, @"\d{8}").ToString();
-                //string manager = Regex.Match(s, @"{1,}").ToString();
-                AddToBase(new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0])), "m", contents[1], contents[2], Convert.ToInt32(contents[3]));
+                Thread fileProcessingThread = new Thread(new ParameterizedThreadStart(ReadFile));
+                fileProcessingThread.Start(s);
             }
         }
 
-        public string[] ReadFile(string fileName)
+        public void ReadFile(object fileName)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Open))
+            OrderListFile file = new OrderListFile();
+
+            string dateTitie = Regex.Match(fileName as string, @"\d{8}").ToString();
+            string manager = Regex.Match(fileName as string, @"(\w{1,})(_)").ToString();
+            manager = manager.Remove(manager.Length - 1);
+            file.Manager = manager;
+
+            using (FileStream fs = new FileStream(fileName as string, FileMode.Open))
             {
                 using (StreamReader reader = new StreamReader(fs, Encoding.Default))
                 {
-                    return reader.ReadLine().Split(',');
+                    while (!reader.EndOfStream)
+                    {
+                        string[] contents = reader.ReadLine().Split(',');
+                        string[] date = contents[0].Split('.');
+                        file.AddOrder(new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0])), contents[1], contents[2], Convert.ToInt32(contents[3]));
+                    }
                 }
             }
+
+            AddToBase(file, fileName as string);
+
+            System.IO.Directory.Move(fileName as string, Catalog + @"\Processed\" + manager + "_" + dateTitie + ".csv");
         }
 
-        public void AddToBase(DateTime date, string manager, string client, string commodity, int price)
+        public void AddToBase(OrderListFile file, string fileName)
         {
-            DatabaseWork d =
-                new DatabaseWork(
-                    @"Data Source=000-ПК\SQLEXPRESS; AttachDbFilename=D:\MyDatabase.mdf; Integrated Security=True");
+            DatabaseWork d = new DatabaseWork(@"Data Source=000-ПК\SQLEXPRESS; AttachDbFilename=D:\MyDatabase1.mdf; Integrated Security=True");
+            
+            Monitor.Enter(locker);
+            try
+            {
+                if (!d.ManagerExists(file.Manager))
+                    d.AddManager(file.Manager);
+            }
+            finally
+            {
+                Monitor.Exit(locker);
+            }
+            
+            foreach (Order i in file.Orders)
+            {
+                Monitor.Enter(locker);
+                try
+                {
+                    if (!d.ClientExists(i.Client))
+                        d.AddClient(i.Client);
 
-            if (!d.ClientExists(client))
-            {
-                d.AddClient(client);
-            }
-            if (!d.CommodityExists(commodity, price))
-            {
-                d.AddCommodity(commodity, price);
-            }
-            if (!d.ManagerExists(manager))
-            {
-                d.AddManager(manager);
-            }
+                    if (!d.CommodityExists(i.Commodity))
+                        d.AddCommodity(i.Commodity);
+                }
+                finally
+                {
+                    Monitor.Exit(locker);
+                }
 
-            d.AddOrder(date, manager, client, commodity, price);
+                d.AddOrder(i.Date, file.Manager, i.Client, i.Commodity, i.Sum);
+            }
         }
     }
 }
