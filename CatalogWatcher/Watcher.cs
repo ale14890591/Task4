@@ -13,20 +13,22 @@ namespace CatalogWatcher
     public class Watcher
     {
         public string Catalog { get; set; }
-        private FileSystemWatcher catalogWatcher;
+        private FileSystemWatcher _catalogWatcher;
         private static object locker = new object();
 
         public void Initialization(string path)
         {
             Catalog = path;
+
+            StoreClassesDataContext db = new StoreClassesDataContext(@"Data Source=000-ПК\SQLEXPRESS; AttachDbFilename=D:\MyDatabase1.mdf; Integrated Security=True");
+            db.CreateDatabase();
+            
+            //_catalogWatcher.Created += Start;
         }
 
         public void Start()
         {
-            catalogWatcher = new FileSystemWatcher(Catalog);
-
-            catalogWatcher.Created += null;
-
+            _catalogWatcher = new FileSystemWatcher(Catalog);
             IEnumerable<object> files = System.IO.Directory.GetFiles(Catalog, "*_????????.csv");
 
             foreach (object s in files)

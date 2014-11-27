@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication3", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogWatcher", "CatalogWatcher\CatalogWatcher.csproj", "{061F6441-D102-481D-A513-90F2977A8936}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleWatcher", "ConsoleWatcher\ConsoleWatcher.csproj", "{AA57C0BD-ADBA-49F5-AB78-91324E3D5373}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{061F6441-D102-481D-A513-90F2977A8936}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{061F6441-D102-481D-A513-90F2977A8936}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{061F6441-D102-481D-A513-90F2977A8936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA57C0BD-ADBA-49F5-AB78-91324E3D5373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA57C0BD-ADBA-49F5-AB78-91324E3D5373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA57C0BD-ADBA-49F5-AB78-91324E3D5373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA57C0BD-ADBA-49F5-AB78-91324E3D5373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

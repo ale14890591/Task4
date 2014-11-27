@@ -11,8 +11,8 @@ namespace CatalogWatcher
     {
         static void Main(string[] args)
         {
-            StoreClassesDataContext db = new StoreClassesDataContext(@"Data Source=000-ПК\SQLEXPRESS; AttachDbFilename=D:\MyDatabase1.mdf; Integrated Security=True");
-            db.CreateDatabase();
+            //StoreClassesDataContext db = new StoreClassesDataContext(@"Data Source=000-ПК\SQLEXPRESS; AttachDbFilename=D:\MyDatabase1.mdf; Integrated Security=True");
+            //db.CreateDatabase();
 
             Watcher w = new Watcher();
 

@@ -1,0 +1,10 @@
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\bin\Debug\ConsoleWatcher.exe.config
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\bin\Debug\ConsoleWatcher.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\bin\Debug\ConsoleWatcher.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\bin\Debug\CatalogWatcher.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\bin\Debug\ConsoleApplication3.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\bin\Debug\CatalogWatcher.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\bin\Debug\ConsoleApplication3.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\obj\Debug\ConsoleWatcher.csprojResolveAssemblyReference.cache
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\obj\Debug\ConsoleWatcher.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\ConsoleWatcher\obj\Debug\ConsoleWatcher.pdb
