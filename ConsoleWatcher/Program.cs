@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using ConsoleApplication3;
+using CatalogWatcher;
 
 namespace ConsoleWatcher
 {
@@ -13,23 +14,10 @@ namespace ConsoleWatcher
     {
         static void Main(string[] args)
         {
-            ConsoleWatcherClass q = new ConsoleWatcherClass();
-
-            q.Watch(@"D:\ProjectCatalog");
-            
-            //while (true)
-            //{
-            //    int i = 0;
-            //    i++;
-            //}
-        }
-
-        static void Func()
-        {
-            while (true)
+            using (Watcher cw = new Watcher(@"D:\ProjectCatalog"))
             {
-                int i = 0;
-                i++;
+                cw.Start();
+                Console.ReadKey();
             }
         }
     }

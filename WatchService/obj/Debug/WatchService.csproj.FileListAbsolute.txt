@@ -1,0 +1,15 @@
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\bin\Debug\WatchService.exe.config
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\bin\Debug\WatchService.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\bin\Debug\WatchService.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\obj\Debug\WatchService.csprojResolveAssemblyReference.cache
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\obj\Debug\WatchService.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\obj\Debug\WatchService.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\bin\Debug\CatalogWatcher.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\bin\Debug\ConsoleApplication3.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\bin\Debug\ConsoleWatcher.exe
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\bin\Debug\CatalogWatcher.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\bin\Debug\ConsoleApplication3.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\bin\Debug\ConsoleWatcher.pdb
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\obj\Debug\WatchService.ProjectInstaller.resources
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\obj\Debug\WatchService.csproj.GenerateResource.Cache
+C:\Users\000\Documents\Visual Studio 2012\Projects\ConsoleApplication3\WatchService\obj\Debug\WatchService.Service1.resources

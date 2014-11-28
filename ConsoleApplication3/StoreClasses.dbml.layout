@@ -27,7 +27,7 @@
         <classShapeMoniker Id="18e7f68c-daa5-4b63-aca1-9758fb753659" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.375 : 2.07294840494792); (2.5 : 2.07294840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.375 : 2.07294840494792); (2.5 : 2.07294840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/StoreClassesDataContext/Commodity/Commodity_Order" />
       <nodes>
         <classShapeMoniker Id="cf5e64dc-0836-4081-b990-adfee69ef273" />

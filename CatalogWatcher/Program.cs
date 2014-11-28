@@ -14,10 +14,10 @@ namespace CatalogWatcher
             //StoreClassesDataContext db = new StoreClassesDataContext(@"Data Source=000-ПК\SQLEXPRESS; AttachDbFilename=D:\MyDatabase1.mdf; Integrated Security=True");
             //db.CreateDatabase();
 
-            Watcher w = new Watcher();
+            //Watcher w = new Watcher();
 
-            w.Initialization(@"D:\ProjectCatalog");
-            w.Start();
+            //w.Initialization(@"D:\ProjectCatalog");
+            //w.Start();
         }
     }
 }

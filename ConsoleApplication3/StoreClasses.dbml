@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Class="StoreClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=D:\iii\MyDatabase.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="ConsoleApplication3.Properties.Settings" SettingsPropertyName="MyDatabaseConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="" Member="Client">
     <Type Name="Client">
       <Column Name="IdClient" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

@@ -43,6 +43,12 @@ namespace ConsoleApplication3
     partial void DeleteManager(Manager instance);
     #endregion
 		
+		public StoreClassesDataContext() : 
+				base(global::ConsoleApplication3.Properties.Settings.Default.MyDatabaseConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
 		public StoreClassesDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
